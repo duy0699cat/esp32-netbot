@@ -1,0 +1,40 @@
+name: Bug report
+description: Something doesn't work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! **Never paste your bot token, Wi-Fi password or claim PIN.** Redact MAC addresses if you prefer.
+  - type: input
+    id: version
+    attributes:
+      label: Firmware version
+      description: Shown in /status, or `status` on the serial console
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      placeholder: "ESP32-D0WD-V3 / CH340 dev board"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What you tapped or typed, in order
+  - type: textarea
+    id: logs
+    attributes:
+      label: Serial log (optional)
+      description: 115200 baud output around the problem. Check it for secrets first.
+      render: text
